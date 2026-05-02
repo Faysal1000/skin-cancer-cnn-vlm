@@ -1,0 +1,87 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# SkinCancerVisionXAI – Gradio Docker Image
+#
+# Targets Hugging Face ZeroGPU Spaces (CUDA 12.1, Python 3.11).
+# Also works as a standalone GPU Docker container.
+#
+# Build:  docker build -t skincancer-xai .
+# Run:    docker run --gpus all -p 7860:7860 skincancer-xai
+# ─────────────────────────────────────────────────────────────────────────────
+
+FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
+
+# ── System packages ──────────────────────────────────────────────────────────
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.11 python3.11-dev python3.11-venv \
+    libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6 \
+    git curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Use python3.11 as default python
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
+# Install pip for python3.11 specifically
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# ── Python dependencies (order matters for version resolution) ────────────────
+
+# 1. Install torch (CUDA 12.1 build) so other packages don't pull CPU wheel
+RUN python -m pip install --no-cache-dir \
+    torch==2.3.1+cu121 torchvision==0.18.1+cu121 \
+    --index-url https://download.pytorch.org/whl/cu121
+
+# 2. Core ML / data – install numpy first, then TF to avoid numpy version conflicts
+RUN python -m pip install --no-cache-dir \
+    numpy==1.26.4 \
+    tensorflow==2.15.1 \
+    tf-keras-vis \
+    opencv-python-headless \
+    Pillow \
+    matplotlib \
+    scipy
+
+# 3. HuggingFace / LoRA
+RUN python -m pip install --no-cache-dir \
+    "transformers>=4.41.0" \
+    "peft>=0.10.0" \
+    "accelerate>=0.30.0" \
+    "bitsandbytes>=0.43.0"
+
+# 4. Gradio 5 (latest stable – compatible with modern huggingface_hub & pydantic)
+RUN python -m pip install --no-cache-dir "gradio>=5.0,<6.0"
+
+# 5. HF ZeroGPU spaces helper (no-op on non-HF environments)
+RUN python -m pip install --no-cache-dir spaces || true
+
+# ── App files ────────────────────────────────────────────────────────────────
+WORKDIR /app
+
+# Copy application code
+COPY app.py .
+
+# Copy model weights
+COPY cbam-xception.keras .
+# Uncomment these when the folders exist in your build context:
+# COPY medgemma_lora_adapter ./medgemma_lora_adapter
+# COPY images ./images
+
+# ── Expose port ───────────────────────────────────────────────────────────────
+EXPOSE 7860
+
+# Disable Gradio analytics (optional)
+ENV GRADIO_ANALYTICS_ENABLED="False"
+
+# Use all available GPU memory (don't reserve)
+ENV TF_FORCE_GPU_ALLOW_GROWTH="true"
+
+# ── Health-check ──────────────────────────────────────────────────────────────
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:7860/ || exit 1
+
+# ── Entrypoint ────────────────────────────────────────────────────────────────
+CMD ["python", "app.py"]

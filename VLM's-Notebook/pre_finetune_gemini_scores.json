@@ -1,0 +1,352 @@
+[
+    {
+        "index": 0,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented area with irregular borders and asymmetry, suggesting a potential melanoma.\n",
+        "true_response": "The model focused on the lesion's irregular pigmentation, specifically the striking variation between light brown and central reddish-pink areas, indicative of melanoma's color variability and potential regression.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model's response correctly identifies the pigmented area but lacks the specific detail regarding the central reddish-pink region and the concept of regression mentioned in the expected answer. It is accurate and concise but less descriptive."
+        }
+    },
+    {
+        "index": 1,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Vascular lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the bright, colorful region in the center of the image, likely highlighting the vascular lesion due to its high contrast and potential for abnormal blood vessel patterns.\n",
+        "true_response": "The model focused on the lesion's homogeneous dark red-purple color and raised morphology, consistent with dermoscopic features like blood lacunae or dilated vessels in vascular lesions.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response is somewhat accurate but lacks the specific clinical terminology provided in the expected response. It correctly identifies the region of focus but misses the link between the visual features (dark red/purple) and specific dermoscopic structures (lacunae) indicative of vascular lesions."
+        }
+    },
+    {
+        "index": 2,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Benign keratosis-like lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright region with a reddish hue, likely indicating a focus on the area of the lesion that is most strongly associated with the \"benign keratosis-like lesions\" classification.\n",
+        "true_response": "The model concentrated on the lesion's central dark brown, textured areas, particularly emphasizing small structures resembling keratin-filled ostia, characteristic of benign keratosis.",
+        "gemini_feedback": {
+            "score": 40,
+            "explanation": "The model response is imprecise. It incorrectly focuses on the reddish center rather than the diagnostically relevant, texture-rich, keratin-filled features correctly identified in the expected response."
+        }
+    },
+    {
+        "index": 3,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Dermatofibroma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, reddish-orange area with surrounding skin structures, likely highlighting the lesion's color and texture as key features for classification.\n",
+        "true_response": "The model focused on the lesion's central pale, reticulated texture and surrounding reddish-brown pigmentation, consistent with dermatofibroma's fibrous stroma and typical nodular appearance.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model's response is accurate and captures the relevant clinical features (color and texture). However, it is less specific than the expected response, which correctly identifies the defining reticulated texture and pigmentation pattern typical of a dermatofibroma."
+        }
+    },
+    {
+        "index": 4,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Dermatofibroma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, circular area with a darker, more defined border, likely highlighting the lesion's shape and texture. This is a common feature in dermatofibromas.\n",
+        "true_response": "The model focused on the lesion's central, lighter, and somewhat contracted texture, interpreting these features as indicative of dermal tethering and the collagenous stroma characteristic of Dermatofibroma.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response identifies the correct region but lacks the medical depth of the expected response. It uses generic terms like 'darker border' instead of identifying the key dermatoscopic features (central white/contracted area, collagenous stroma) associated with dermatofibromas."
+        }
+    },
+    {
+        "index": 5,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Benign keratosis-like lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright region with a rainbow-like pattern, likely highlighting the area of the image that contributed most to the \"Benign keratosis-like lesions\" prediction.\n",
+        "true_response": "The model highlighted the granular, dark brown texture, indicating hyperkeratosis and keratin cysts, key features for diagnosing benign keratosis-like lesions.",
+        "gemini_feedback": {
+            "score": 40,
+            "explanation": "The model response is superficial; it describes the heatmap colors rather than the clinical dermatological features. It fails to identify the critical markers (hyperkeratosis, keratin cysts) that define the lesion, whereas the expected response accurately links model focus to clinical diagnostic criteria."
+        }
+    },
+    {
+        "index": 6,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Basal cell carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright area of the image, likely highlighting the lesion's intensity and texture, which are key indicators of potential skin cancer.\n",
+        "true_response": "The model focused on the central melanin pigmentation, the lesion's pearly structure, and surrounding prominent telangiectasias, aligning with characteristic Basal cell carcinoma morphology.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model correctly identifies the focus area but lacks clinical specificity. While the expected response highlights diagnostic dermatological features (pearly structure, telangiectasias), the model uses vague terms like 'intensity and texture'."
+        }
+    },
+    {
+        "index": 7,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanocytic nevi\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented area with irregular borders and a central dot, suggesting a melanocytic nevus.\n",
+        "true_response": "The model focused on the lesion's central brown pigmentation and internal structural patterns, consistent with a melanocytic nevus's uniform coloration and expected dermoscopic features like globular/reticular structures.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model's response is concise and hits the correct word count, but it is less clinically precise than the expected response. It mentions 'irregular borders' which is actually a feature often associated with malignancy, rather than the 'uniform' or 'expected' structures mentioned in the gold standard."
+        }
+    },
+    {
+        "index": 8,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented area with irregular borders and a mottled appearance, suggesting a potential melanoma.\n",
+        "true_response": "The model focused on the irregular, notched border and striking color variation, including reddish hues and dark brown areas, consistent with melanoma's atypical growth and varied pigment.",
+        "gemini_feedback": {
+            "score": 65,
+            "explanation": "The model response is accurate and identifies key features but lacks the specific detail regarding color variation and structural irregularities (notched borders) highlighted in the expected response. It is a bit too brief."
+        }
+    },
+    {
+        "index": 9,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Basal cell carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright region of the image, likely highlighting the lesion's core characteristics, which are indicative of basal cell carcinoma.\n",
+        "true_response": "The model focused on the central erythematous, pearly papule with prominent telangiectasias, aligning with key morphological features of basal cell carcinoma.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model correctly identified the focus on the central region. However, it lacked the specific clinical terminology ('erythematous', 'pearly papule', 'telangiectasias') present in the expected response, making it less precise."
+        }
+    },
+    {
+        "index": 10,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Basal cell carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, brightly colored region with a distinct shape, likely highlighting the tumor's core and its unique characteristics. This is a key feature for identifying Basal cell carcinoma.\n",
+        "true_response": "The model focused on the central, darker, nodular area with subtle pigmentation and irregular texture, likely identifying telangiectasias, early ulceration, or melanin deposits characteristic of Basal Cell Carcinoma.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response is vague and generic, lacking the specific clinical terminology (telangiectasias, ulceration, pigmentation) present in the expected response. It correctly identifies the focus on the central region but fails to describe the specific features being analyzed."
+        }
+    },
+    {
+        "index": 11,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Actinic keratoses and intraepithelial carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on a region with a high concentration of red and pink colors, likely indicating inflammation or abnormal tissue. This is a key feature for identifying actinic keratoses and intraepithelial carcinoma.\n",
+        "true_response": "The model focused on the central reddish, rough, and scaly epidermal changes. These features are consistent with the characteristic erythema, hyperkeratosis, and parakeratosis seen in actinic keratoses.",
+        "gemini_feedback": {
+            "score": 65,
+            "explanation": "The model response is accurate regarding the location, but lacks the clinical terminology (hyperkeratosis, parakeratosis) present in the expected response, which is crucial for characterizing actinic keratosis accurately."
+        }
+    },
+    {
+        "index": 12,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Vascular lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on a region with high intensity and color saturation, likely indicating a vascular lesion. This is the area where the model identified the most relevant features for classification.\n",
+        "true_response": "The model focused on the central, well-circumscribed dark red/purple area, likely interpreting it as homogeneous red-to-blue lacunae or blood pools characteristic of vascular lesions.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model's response is overly generic. While it correctly identifies the focal point, it fails to use specific dermatological terminology like 'lacunae' or 'blood pools,' which are crucial for explaining why the model classified the lesion as vascular."
+        }
+    },
+    {
+        "index": 13,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Dermatofibroma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, circular area of the image, likely highlighting the lesion's core and possibly its borders, as these features are crucial for identifying dermatofibromas.\n",
+        "true_response": "The model focused on the central reddish-pink nodular structure and subtle surface changes, consistent with dermatofibroma's characteristic firm, discolored presentation and potential dimple sign due to dermal tethering.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model's response is accurate and correctly identifies the focus area, but it lacks the clinical depth and technical specificity present in the expected response regarding dermatofibroma morphology."
+        }
+    },
+    {
+        "index": 14,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the areas with high color intensity and saturation, likely indicating the presence of pigment and texture, which are key features in melanoma detection.\n",
+        "true_response": "The model focused on the lesion's striking color variation (reddish, dark brown) and irregular, notched borders, interpreting these as critical morphological features for melanoma malignancy.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model's response is overly generic and focuses on color intensity rather than the specific morphological features (irregular borders, color variation) mentioned in the expected response, which are clinically relevant for melanoma."
+        }
+    },
+    {
+        "index": 15,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Benign keratosis-like lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model highlights the pigmented, irregular patches on the skin, suggesting a focus on these areas as indicators of the lesion.\n",
+        "true_response": "The model highlighted the lesion's dark brown pigmentation and surrounding granular surface texture. These features align with the 'velvety or granular' appearance and characteristic keratin-filled ostia described for benign keratosis.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response is accurate but lacks the necessary clinical detail regarding texture and keratin-filled features present in the expected response, making it less informative for medical interpretability."
+        }
+    },
+    {
+        "index": 16,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Basal cell carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, red-colored region of the image, likely highlighting the lesion's core area, which is a key indicator for Basal cell carcinoma detection.\n",
+        "true_response": "The model strongly attended to the central, darker areas and visible telangiectatic vessels. These features are highly characteristic of pigmented basal cell carcinoma, which often presents with both melanin and prominent vascularity.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response identifies the region of interest but misses the specific clinical features (telangiectatic vessels and pigmentation) noted in the ground truth. It is less medically accurate and detailed."
+        }
+    },
+    {
+        "index": 17,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Basal cell carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented, irregular lesion in the center of the image, likely indicating a basal cell carcinoma.\n",
+        "true_response": "The model focused on the lesion's irregular border and central dark pigmentation, consistent with a pigmented Basal Cell Carcinoma often mimicking melanoma.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model response is accurate and correctly identifies the focus on the lesion. However, it lacks the specific clinical details (irregular border) mentioned in the expected response, which would have made the explanation more precise."
+        }
+    },
+    {
+        "index": 18,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanocytic nevi\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented area within the image, likely highlighting the melanocytes responsible for the skin's color and texture, leading to the classification of Melanocytic nevi.\n",
+        "true_response": "The model focused on the lesion's symmetrical, well-circumscribed shape and uniform brown pigmentation, especially the central, darker area. This aligns with the typical morphology of a melanocytic nevus.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response is somewhat vague and makes an inaccurate biological claim (that the heatmap highlights individual melanocytes). It fails to mention the critical diagnostic features of symmetry and uniform pigmentation emphasized in the expected response."
+        }
+    },
+    {
+        "index": 19,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Actinic keratoses and intraepithelial carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright region with a red hue, likely highlighting the area of concern for potential skin abnormalities.\n",
+        "true_response": "The model focused on the central intense red coloration and subtle epidermal thickening, indicative of dyskeratosis and early 'sandpaper-like' texture characteristic of actinic keratoses.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model correctly identifies the primary region of interest (the central red hue). However, it lacks the technical specificity regarding dermatological features (dyskeratosis, epidermal changes) present in the expected response."
+        }
+    },
+    {
+        "index": 20,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanocytic nevi\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the red and brown regions within the image, likely highlighting the pigmentation and color characteristics associated with melanocytic nevi.\n",
+        "true_response": "The model focused on the lesion's uniform brown pigmentation and generally symmetrical, well-defined borders, aligning with characteristic features of a melanocytic nevus.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model accurately identified the relevant features (pigmentation/color) but failed to address the morphological characteristics (symmetry/borders) mentioned in the expected response. The explanation is concise and well within the word count limit."
+        }
+    },
+    {
+        "index": 21,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Actinic keratoses and intraepithelial carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the pigmented, irregular patches of skin with a reddish hue, suggesting a potential concern for actinic keratoses and intraepithelial carcinoma.\n",
+        "true_response": "The model focused on the central reddish-tan discoloration and subtle surface roughness, characteristic features of actinic keratoses. This likely reflects epidermal atypia and parakeratosis.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model response is accurate and captures the relevant clinical features (pigmentation and hue). However, it lacks the specific dermatopathological context (epidermal atypia/parakeratosis) provided in the expected response, which explains why those features are significant."
+        }
+    },
+    {
+        "index": 22,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanocytic nevi\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the red and orange regions of the image, likely highlighting the pigmentation and color characteristics associated with melanocytic nevi.\n",
+        "true_response": "The model focused on the lesion's central, uniform pigmentation and overall color distribution, consistent with the even pigment typical of a benign melanocytic nevus, rather than border specifics.",
+        "gemini_feedback": {
+            "score": 85,
+            "explanation": "The model's response is accurate and captures the essence of the target features (color and pigmentation). It is concise, though slightly less descriptive regarding the 'uniform' and 'benign' aspects than the reference."
+        }
+    },
+    {
+        "index": 23,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Vascular lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, red-colored region, likely highlighting the area of vascular abnormality detected in the image. This is a key feature for identifying vascular lesions.\n",
+        "true_response": "The model focused on the lesion's deep, homogeneous red-purple coloration and well-circumscribed border, indicating pooled blood, which is characteristic of vascular lesions like cherry angiomas.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model response is accurate and correctly identifies the focus on the lesion. However, it lacks the technical specificity regarding color and morphology found in the expected response."
+        }
+    },
+    {
+        "index": 24,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Dermatofibroma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, reddish-brown area with irregular borders and a raised appearance, suggesting a potential skin lesion.\n",
+        "true_response": "The model focused on the central, firm-appearing, reddish-brown to tan-pink nodular structure, aligning with the characteristic discoloration and elevated morphology described for dermatofibromas.",
+        "gemini_feedback": {
+            "score": 85,
+            "explanation": "The model's response is accurate and captures the relevant clinical features (color and raised morphology). While slightly less detailed than the expected response, it is concise and fulfills the prompt constraints."
+        }
+    },
+    {
+        "index": 25,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Dermatofibroma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central region of the image, likely highlighting the area of the skin lesion, as it is the most prominent feature and likely the primary reason for the predicted class of Dermatofibroma.\n",
+        "true_response": "The model focused on the central, intense reddish coloration and the raised, nodular structure, consistent with the firm, discolored cutaneous nodule morphology characteristic of dermatofibroma.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model correctly identifies the focus on the central region but fails to describe specific morphological features (coloration, nodular structure) mentioned in the expected response, providing a more generic interpretation."
+        }
+    },
+    {
+        "index": 26,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Benign keratosis-like lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central region of the image, likely highlighting the area of interest for the diagnosis of benign keratosis-like lesions.\n",
+        "true_response": "The model focused on the lesion's irregular, dark brown, waxy surface and subtle keratin inclusions, consistent with the velvety/granular texture and horn cysts characteristic of benign seborrheic keratosis.",
+        "gemini_feedback": {
+            "score": 30,
+            "explanation": "The model's response is overly generic and fails to identify the specific visual features (texture, horn cysts) required for the classification. It lacks the clinical detail of the expected response."
+        }
+    },
+    {
+        "index": 27,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Vascular lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the red, circular region in the image, likely highlighting the area of vascular lesions based on its predicted class.\n",
+        "true_response": "The model focused on the lesion's well-circumscribed, raised, and intense red-purple coloration. This is consistent with pooled blood and vascular structures, characteristic dermoscopic features of vascular lesions.",
+        "gemini_feedback": {
+            "score": 60,
+            "explanation": "The model response is accurate but lacks the clinical detail and depth of the expected response. It correctly identifies the region of interest but fails to mention specific dermoscopic characteristics like the raised structure or the color-based reasoning related to vascular pathology."
+        }
+    },
+    {
+        "index": 28,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanocytic nevi\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the reddish-brown area in the center of the image, likely highlighting the pigmentation and texture of the melanocytic nevus.\n",
+        "true_response": "The model focused on the lesion's central, darker, and largely uniform pigmentation, consistent with the characteristic even coloration and well-circumscribed nature of a melanocytic nevus.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model response is accurate and concise, correctly identifying the focus on pigmentation. However, it lacks the specific clinical nuance regarding the lesion's 'uniform' and 'well-circumscribed' characteristics, which are key diagnostic features mentioned in the expected response."
+        }
+    },
+    {
+        "index": 29,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Actinic keratoses and intraepithelial carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, brightly colored region of the image, likely highlighting the area of concern for actinic keratoses and intraepithelial carcinoma.\n",
+        "true_response": "The model prioritized the central reddish, granular texture, identifying the rough, sandpaper-like surface and characteristic color, features consistent with actinic keratoses morphology.",
+        "gemini_feedback": {
+            "score": 65,
+            "explanation": "The model response is accurate but lacks the descriptive detail present in the expected response. It fails to identify the specific visual features (granular texture/roughness) that characterize the condition."
+        }
+    },
+    {
+        "index": 30,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Vascular lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, red-colored region of the image, likely highlighting the area of vascular lesions. This is a common feature in the image.\n",
+        "true_response": "The model focused on the homogeneous dark red-purple coloration and well-circumscribed, possibly raised structure, consistent with dermoscopic red-to-blue lacunae or pooled blood in vascular lesions.",
+        "gemini_feedback": {
+            "score": 40,
+            "explanation": "The model response is overly generic and lacks the clinical specificity found in the expected answer. It fails to identify the diagnostic features (lacunae/pooled blood) relevant to the class."
+        }
+    },
+    {
+        "index": 31,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central, bright region with a mix of red, yellow, and purple hues, likely indicating a high concentration of melanin or other pigments associated with melanoma.\n",
+        "true_response": "The model focused on the lesion's central area, highlighting striking color variation and irregular, ill-defined structure. These visual cues are consistent with melanoma's heterogeneous pigmentation and irregular borders.",
+        "gemini_feedback": {
+            "score": 75,
+            "explanation": "The model's response is accurate in identifying the location and visual characteristics of the lesion but lacks the formal clinical terminology (heterogeneity, irregular structure) present in the expected response."
+        }
+    },
+    {
+        "index": 32,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Benign keratosis-like lesions\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the central region of the image, likely highlighting the area of interest for the diagnosis of benign keratosis-like lesions.\n",
+        "true_response": "The model focused on regions of darker pigmentation and structural texture, likely representing hyperkeratosis and keratin cysts, characteristic features of seborrheic keratosis morphology.",
+        "gemini_feedback": {
+            "score": 40,
+            "explanation": "The model's response is too vague and lacks clinical specificity. While it correctly identifies the focus on the central region, it fails to mention the diagnostic morphological features (pigmentation and keratin cysts) essential for the classification, unlike the expert-level expected response."
+        }
+    },
+    {
+        "index": 33,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Melanoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the reddish-brown regions, likely indicating the presence of pigmented cells or a lesion characteristic of melanoma.\n",
+        "true_response": "The model focused on the lesion's irregular shape, variegated color (brown/red), and heterogeneous pigment, consistent with melanoma's described atypical growth patterns and irregular borders due to melanocyte proliferation.",
+        "gemini_feedback": {
+            "score": 65,
+            "explanation": "The model's response is accurate but lacks the depth and professional clinical terminology present in the expected response. It correctly identifies the relevant regions but fails to highlight the diagnostic features like irregular shape and heterogeneous pigment."
+        }
+    },
+    {
+        "index": 34,
+        "prompt": "You are an AI assistant specialized in model interpretability. I am providing:\n- CNN model Grad-CAM++ heatmap image\n- Model predicted class: Actinic keratoses and intraepithelial carcinoma\n\nBased on the Grad-CAM++ heatmap, write a clear and concise 20–30 word explanation of which features the model focused on and why. Output only the explanation (no headings).",
+        "model_response": "The model focused on the area with the highest intensity in the heatmap, likely indicating the presence of the lesion. This area is likely a region of high pigmentation or cellular density.\n",
+        "true_response": "The model focused on the lesion's reddish-tan color and subtle irregular texture, consistent with actinic keratoses' epidermal atypia, dyskeratosis, and rough, sandpaper-like surface.",
+        "gemini_feedback": {
+            "score": 40,
+            "explanation": "The model's response is overly generic and lacks clinical specificity. It fails to identify the relevant dermatological features (texture and color) mentioned in the expected response, providing only vague observations about pigmentation and density."
+        }
+    }
+]

@@ -1,0 +1,11 @@
+Metric,Pre-Finetune,Post-Finetune
+Total Samples,35,35
+Valid Scores,35,35
+Failed / Skipped,0,0
+Mean Score,62.14,87.86
+Median Score,60.00,90.00
+Std Deviation,13.22,11.79
+Min Score,30.00,30.00
+Max Score,85.00,95.00
+25th Percentile,60.00,90.00
+75th Percentile,75.00,92.50

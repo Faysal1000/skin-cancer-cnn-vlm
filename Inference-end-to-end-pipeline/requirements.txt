@@ -1,0 +1,25 @@
+# SkinCancerVisionXAI – requirements
+# For Hugging Face Spaces (Gradio SDK), this file is read automatically.
+
+# ── Gradio 5 (latest stable) ─────────────────────────────────────────────────
+gradio==5.50.0
+audioop-lts             # Backport of audioop for Python 3.13+ (needed by pydub/gradio)
+spaces                  # HF ZeroGPU helper (safe to install; no-op locally)
+
+# ── Deep learning core ────────────────────────────────────────────────────────
+# torch and torchvision are pre-installed on HF GPU Spaces (no need to pin here)
+tensorflow>=2.20.0
+tf-keras-vis            # Grad-CAM++
+
+# ── Vision / image processing ────────────────────────────────────────────────
+numpy
+opencv-python-headless
+Pillow
+matplotlib
+scipy
+
+# ── HuggingFace / LoRA ────────────────────────────────────────────────────────
+transformers>=4.41.0
+peft>=0.10.0
+accelerate>=0.30.0
+bitsandbytes>=0.43.0
